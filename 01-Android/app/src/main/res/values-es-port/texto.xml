@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="display_text">Condición 4: PORT ES</string>
+    <color name="background_color">#CCFFCC</color>
+    <color name="text_color">#006400</color>
+</resources>

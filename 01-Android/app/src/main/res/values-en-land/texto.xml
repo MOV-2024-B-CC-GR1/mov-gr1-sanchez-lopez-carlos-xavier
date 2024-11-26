@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="display_text">Condition 1: LANDS EN</string>
+    <color name="background_color">#FFCCCC</color>
+    <color name="text_color">#FF0000</color>
+</resources>

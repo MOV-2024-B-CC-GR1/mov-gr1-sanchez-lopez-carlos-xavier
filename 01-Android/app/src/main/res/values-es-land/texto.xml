@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="display_text">Condición 3: LANDS ES</string>
+    <color name="background_color">#FFFFCC</color>
+    <color name="text_color">#808000</color>
+</resources>
