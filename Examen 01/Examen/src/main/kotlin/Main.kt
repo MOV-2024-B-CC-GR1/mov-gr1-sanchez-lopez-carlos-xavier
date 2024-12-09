@@ -29,7 +29,7 @@ fun main() {
             7 -> actualizarAutoInteractivo()
             8 -> eliminarAutoInteractivo()
             9 -> {
-                println("¡Hasta luego!")
+                println("Adios!")
                 break
             }
             else -> println("Opción inválida. Intenta de nuevo.")
