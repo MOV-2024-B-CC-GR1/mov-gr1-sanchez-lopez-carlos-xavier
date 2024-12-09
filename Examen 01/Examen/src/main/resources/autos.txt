@@ -1,0 +1,2 @@
+AutoCentro|Toyota|Corolla|2020|25000.0|true
+AutoNorte|Mazda|mx3|2024|120000.0|true
