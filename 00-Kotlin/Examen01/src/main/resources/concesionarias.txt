@@ -1,3 +1,2 @@
-AutoCentro|Av. Siempre Viva 1234|0|2000-01-01|true
-AutoValle|Sangolqui|0|2000-05-15|true
-AutoNorte|Tumbaco|1|2000-12-02|true
+AutoSur|Quitumbe|1|2000-11-11|true
+AutoNorte|Pomasqui|1|2002-11-05|true

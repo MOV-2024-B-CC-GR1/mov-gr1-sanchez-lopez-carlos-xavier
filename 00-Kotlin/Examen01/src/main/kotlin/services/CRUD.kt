@@ -14,7 +14,9 @@ object CRUD {
 
     // Crear una concesionaria
     fun crearConcesionaria(concesionaria: Concesionaria) {
-        archivoConcesionarias.appendText(concesionaria.toFileString() + "\n")
+        val concesionarias = leerConcesionarias().toMutableList()
+        concesionarias.add(concesionaria)
+        guardarConcesionarias(concesionarias)
     }
 
     // Crear un auto para una concesionaria específica
@@ -73,17 +75,14 @@ object CRUD {
 
     // Actualizar auto
     fun actualizarAuto(concesionariaNombre: String, modelo: String, nuevoAuto: Auto) {
-        val concesionarias = leerConcesionarias()
-        val concesionaria = concesionarias.find { it.nombre == concesionariaNombre }
-        concesionaria?.let {
-            val index = it.autos.indexOfFirst { auto -> auto.modelo == modelo }
-            if (index != -1) {
-                it.autos[index] = nuevoAuto
-                it.numeroAutos = it.autos.size
-                guardarConcesionarias(concesionarias)
-                guardarAutos(concesionariaNombre, it.autos)
-            }
+        val autos = leerAutos(concesionariaNombre).toMutableList()
+        val index = autos.indexOfFirst{ it.modelo == modelo }
+        if (index != -1) {
+            autos[index] = nuevoAuto
+            guardarAutos(concesionariaNombre, autos)
         }
+        println(autos)
+
     }
 
     // Eliminar concesionaria
@@ -113,12 +112,15 @@ object CRUD {
     }
 
     private fun guardarAutos(concesionariaNombre: String, autos: List<Auto>) {
-        archivoAutos.writeText(
-            archivoAutos.readLines()
-                .filterNot { it.startsWith("$concesionariaNombre|") }
-                .joinToString("\n") + "\n" +
-                    autos.joinToString("\n") { "$concesionariaNombre|${it.toFileString()}" }
-        )
+        // Primero, eliminamos las entradas de la concesionaria en autos.txt
+        val lineasRestantes = archivoAutos.readLines()
+            .filterNot { it.startsWith("$concesionariaNombre|") }
+
+        // Luego, agregamos las nuevas líneas de autos para esa concesionaria
+        val nuevasLineas = autos.joinToString("\n") { "$concesionariaNombre|${it.toFileString()}" }
+
+        // Escribimos el archivo de autos con los datos actualizados
+        archivoAutos.writeText((lineasRestantes + nuevasLineas).joinToString("\n"))
     }
 
     private fun Concesionaria.toFileString(): String {
