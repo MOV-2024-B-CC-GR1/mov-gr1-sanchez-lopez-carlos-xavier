@@ -100,7 +100,9 @@ class CrearAutoActivity : AppCompatActivity() {
                     direccion = "",  // Dejar estos campos vacíos si no son necesarios
                     numeroAutos = 0,
                     fechaFundacion = "",
-                    abierta = false
+                    abierta = false,
+                    latitud = 0.0,
+                    longitud = 0.0
                 )
 
                 concesionarias.add(concesionaria)

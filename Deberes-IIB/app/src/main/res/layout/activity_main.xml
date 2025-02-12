@@ -36,6 +36,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Crear Auto" />
+
+        <Button
+            android:id="@+id/btnVerMapa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ver Mapa" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

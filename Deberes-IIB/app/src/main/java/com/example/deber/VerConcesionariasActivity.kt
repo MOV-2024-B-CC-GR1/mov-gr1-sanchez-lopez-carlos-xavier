@@ -37,7 +37,9 @@ class VerConcesionariasActivity : AppCompatActivity() {
                 ConcesionariaTable.COLUMN_DIRECCION,
                 ConcesionariaTable.COLUMN_FECHA_FUNDACION,
                 ConcesionariaTable.COLUMN_ABIERTA,
-                ConcesionariaTable.COLUMN_NUMERO_AUTOS
+                ConcesionariaTable.COLUMN_NUMERO_AUTOS,
+                ConcesionariaTable.COLUMN_LATITUD,
+                ConcesionariaTable.COLUMN_LONGITUD
             ),
             null,
             null,
@@ -54,6 +56,8 @@ class VerConcesionariasActivity : AppCompatActivity() {
                 val fechaFundacion = cursor.getString(cursor.getColumnIndex(ConcesionariaTable.COLUMN_FECHA_FUNDACION))
                 val abierta = cursor.getInt(cursor.getColumnIndex(ConcesionariaTable.COLUMN_ABIERTA)) == 1
                 val numeroAutos = cursor.getInt(cursor.getColumnIndex(ConcesionariaTable.COLUMN_NUMERO_AUTOS))
+                val latitud = cursor.getDouble(cursor.getColumnIndex(ConcesionariaTable.COLUMN_LATITUD))
+                val longitud = cursor.getDouble(cursor.getColumnIndex(ConcesionariaTable.COLUMN_LONGITUD))
 
                 val concesionaria = Concesionaria(
                     id = id,
@@ -61,7 +65,9 @@ class VerConcesionariasActivity : AppCompatActivity() {
                     direccion = direccion,
                     numeroAutos = numeroAutos,
                     fechaFundacion = fechaFundacion,
-                    abierta = abierta
+                    abierta = abierta,
+                    latitud = latitud,
+                    longitud = longitud
                 )
 
                 concesionarias.add(concesionaria)

@@ -7,6 +7,8 @@ data class Concesionaria(
     var numeroAutos: Int,
     val fechaFundacion: String,
     val abierta: Boolean,
+    val latitud: Double,   // Nueva propiedad para la latitud
+    val longitud: Double,  // Nueva propiedad para la longitud
     val autos: MutableList<Auto> = mutableListOf()
 
 ){

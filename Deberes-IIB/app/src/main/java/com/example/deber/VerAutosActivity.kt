@@ -125,7 +125,9 @@ class VerAutosActivity : AppCompatActivity() {
                     direccion = "",
                     numeroAutos = 0,
                     fechaFundacion = "",
-                    abierta = false
+                    abierta = false,
+                    latitud = 0.0,
+                    longitud = 0.0
                 )
 
                 concesionarias.add(concesionaria)

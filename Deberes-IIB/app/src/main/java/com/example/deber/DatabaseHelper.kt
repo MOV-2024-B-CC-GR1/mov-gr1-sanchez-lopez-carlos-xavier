@@ -4,7 +4,7 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
-class DBHelper(context: Context) : SQLiteOpenHelper(context, "concesionarias.db", null, 1) {
+class DBHelper(context: Context) : SQLiteOpenHelper(context, "concesionarias.db", null, 2) {
 
     override fun onCreate(db: SQLiteDatabase?) {
         val createTableQuery = """
@@ -14,7 +14,9 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, "concesionarias.db"
                 ${ConcesionariaTable.COLUMN_DIRECCION} TEXT NOT NULL,
                 ${ConcesionariaTable.COLUMN_FECHA_FUNDACION} TEXT NOT NULL,
                 ${ConcesionariaTable.COLUMN_ABIERTA} INTEGER,
-                ${ConcesionariaTable.COLUMN_NUMERO_AUTOS} INTEGER DEFAULT 0
+                ${ConcesionariaTable.COLUMN_NUMERO_AUTOS} INTEGER DEFAULT 0,
+                ${ConcesionariaTable.COLUMN_LATITUD} REAL,  
+                ${ConcesionariaTable.COLUMN_LONGITUD} REAL
             )
         """
         db?.execSQL(createTableQuery)
@@ -50,6 +52,8 @@ object ConcesionariaTable {
     const val COLUMN_FECHA_FUNDACION = "fecha_fundacion"
     const val COLUMN_ABIERTA = "abierta"
     const val COLUMN_NUMERO_AUTOS = "numero_autos"
+    const val COLUMN_LONGITUD = "longitud"
+    const val COLUMN_LATITUD = "latitud"
 }
 
 object AutoTable{
